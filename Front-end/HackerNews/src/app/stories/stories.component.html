@@ -1,0 +1,20 @@
+<div class="search-bar">
+  <input [(ngModel)]="query" placeholder="Search stories...">
+  <button (click)="onSearch()">Search</button>
+</div>
+
+<div *ngIf="loading" class="loader">Loading...</div>
+
+<ul class="story-list">
+  <li *ngFor="let story of stories">
+    <a *ngIf="story.url" [href]="story.url" target="_blank">{{ story.title }}</a>
+    <span *ngIf="!story.url">{{ story.title }}</span>
+  </li>
+</ul>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="page === 1">Previous</button>
+  <span>Page {{page}}</span>
+  <button (click)="nextPage()" [disabled]="page * pageSize >= total">Next</button>
+</div>
+
