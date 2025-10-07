@@ -75,6 +75,9 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "assets": [
               {
                 "glob": "**/*",
@@ -89,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cf59c741-4f48-4751-843b-3da66128a1a4"
   }
 }
